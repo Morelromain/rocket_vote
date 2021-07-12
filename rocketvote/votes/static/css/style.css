@@ -1,0 +1,223 @@
+body {
+    background: rgb(8, 8, 7);
+}
+
+#bloc_page {
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+    color: rgb(178, 190, 216);
+    width: 480px;
+    margin: auto;
+    text-align: center;
+}
+
+#header {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+    width: 480px;
+    margin: auto;
+    color: rgb(157, 117, 245);
+    text-align: center;
+}
+
+.form_choice {
+    width: 220px;
+    margin: auto;
+}
+
+.block_button {
+    display: inline-block;
+    
+}
+
+.ghost {
+    display: none
+}
+
+progress {
+    background-color: rgb(108, 103, 119);
+    color:rgb(157, 117, 245);
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(30, 29, 31, 0.87) inset;
+}
+progress[value] {
+    color: rgb(157, 117, 245);
+}
+progress[value]::-webkit-progress-value {
+    background: rgb(157, 117, 245);
+}
+progress[value]::-moz-progress-bar {
+    background: rgb(157, 117, 245);
+}
+progress[value]::-webkit-progress-value {
+    background: rgb(157, 117, 245);
+}
+progress[value]::-webkit-progress-bar {
+    background: rgb(157, 117, 245);
+}
+
+#percent {
+    position: absolute;   
+    padding-left: 65px;
+
+    color: rgb(241, 241, 241);
+   }
+   
+.button {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgb(157, 117, 245);
+    border: none;
+    float:right;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #F89900;
+    float:right;
+}
+
+.button-ghost {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgb(157, 117, 245);
+    border: none;
+    display: none;
+    float:right;
+}
+
+.buttonazza {
+    visibility: hidden;
+}
+
+
+
+
+.button-ghost:hover {
+    cursor: pointer;
+    background-color: #F89900;
+    display: none;
+    float:right;
+}
+
+.button-next {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(157, 117, 245);
+    border: none;
+    cursor: pointer;
+}
+
+.button-next:hover {
+    cursor: pointer;
+    background-color: #F89900;
+}
+
+.button-next-ghost {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(157, 117, 245);
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.button-next-ghost:hover {
+    cursor: pointer;
+    background-color: #F89900;
+    display: none;
+}
+
+.js-copy {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(157, 117, 245);
+    border: none;
+}
+
+.js-copy:hover {
+    cursor: pointer;
+    background-color: #F89900;
+}
+
+p span {
+    border: 2px solid rgb(157, 117, 245);
+    padding: 0.5rem;
+    background: rgb(92, 91, 91);
+}
+
+.form_votea{
+    border: 2px solid rgb(157, 117, 245);
+    padding: 0.5rem;
+    background: rgb(92, 91, 91);
+    width: 300px;
+}
+
+.form_voteb{
+    border: 2px solid rgb(157, 117, 245);
+    padding: 0.2rem;
+    background: rgb(126, 126, 126);
+}
+
+.form_votec{
+    border: 2px solid rgb(157, 117, 245);
+    padding: 0.2rem;
+    background: rgb(126, 126, 126);
+    width : 95px;
+}
+
+#result{
+    width: 450px;
+    margin: auto;
+    text-align: left;
+}
+
+/* radio button */
+
+.rad-label {
+    align-items: center;
+    text-align: center;
+    border-radius: 100px;
+    padding: 10px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+  
+.rad-label:hover {
+    background: hsla(0, 0%, 80%, .14);
+}
+  
+.rad-label:focus-within {
+    background: rgba(158, 117, 245, 0.363);
+}
+  
+.rad-input {
+    width: 18px;
+    height: 18px;
+    border: 2px solid white;
+}
+
+.rad-input:checked:after {
+    width: 18px;
+    height: 18px;
+}
+
+/* details final */
+
+#details{
+    display: none;
+    text-align: left;
+    margin: auto;
+    width: 480px;
+}
+
+#center-block{
+
+    margin: auto;
+    width: 100px;
+}

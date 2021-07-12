@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h4>{{ my_vote.title }}</h4>
+
+        <form method="POST" enctype="multipart/form-data" action="{% url 'vote' id_vote=id_vote %}">
+        {% csrf_token %}
+        <label class="title">Rentrer votre nom : </label>
+        {{ voter_form.name }}
+        <br><br>
+        <div id="button-rating" >
+            {% for choice in choices %}
+                <label class="rad-label">
+                    <input type="radio" class="rad-input" name="tabs" value={{ forloop.counter0 }}  id="0" checked="checked"/>
+                    Choix {{ forloop.counter }} : {{ choice.description }} 
+                </label>
+
+                <br><br>
+            {% endfor %}
+        </div>
+        <br><input type="submit" class="button-next" value="Je vote"><br><br>
+        </form><br><br>
+
+{% endblock %}
+

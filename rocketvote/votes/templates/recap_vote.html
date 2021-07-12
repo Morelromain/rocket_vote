@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+    <h2>Votre vote à été créé !</h2><br>
+    <p>
+        Lien à envoyer aux votants : <br><br><span id="tocopy">127.0.0.1:8000/vote/{{ id_vote }}</span>
+        <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
+     </p><br><br>
+
+    <form action="http://127.0.0.1:8000/vote/{{ id_vote }}">
+        <input type="submit" class="button-next" value="Je veux voter!" />
+    </form>
+    <form action="http://127.0.0.1:8000/votefinish/{{ id_vote }}">
+        <input type="submit" class="button-next" value="Voir résultats" />
+    </form>
+
+     
+<script type="text/javascript" src="{% static 'js/copy_button.js' %}"></script>
+
+     
+{% endblock %}

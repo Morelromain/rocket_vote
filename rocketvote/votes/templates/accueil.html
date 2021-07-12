@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h4>Vote rapide entre amis</h4>
+    <br>
+    <form action="{% url 'create_vote'%}">
+        <input type="submit" class="button-next" value="Creer un vote" />
+    </form>
+    
+{% endblock %}

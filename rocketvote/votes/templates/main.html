@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>FastVote</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="header">
+        <br>
+        <img class="fit-picture" src="{% static 'img/logo.png' %}"
+        alt="Logo rocket vote">
+    </div>
+    <div id="bloc_page">
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>

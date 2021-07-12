@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% load static %}
+    <h3>{{ my_vote.title }}</h3>
+    Total des votes : {{ my_vote.nb_all_vote }}<br><br>
+    <div id="result">
+        {% for choice in choices %}
+        Choix {{ forloop.counter }} :
+        <span id="percent"><b>{% widthratio choice.percent_vote my_vote.nb_all_vote 1 %} %</b></span>
+            <progress id="file" max="100" value="{% widthratio choice.percent_vote my_vote.nb_all_vote 1 %}">
+                
+            </progress>
+            {%  if choice.nb_vote == 1 or choice.nb_vote == 0 %}
+                <small>{{choice.nb_vote}} vote</small>
+            {% endif %}
+            {%  if choice.nb_vote > 1 %}
+                <small>{{choice.nb_vote}} votes</small>
+            {% endif %}
+            &nbsp; &nbsp; {{ choice.description }}<br><br>
+        {% endfor %}
+        <br>
+    </div>
+    <div id = center-block>
+        <input type="button" value="Afficher votants" id="show_detail" class="button-next">
+        <input type="button" value="Cacher votants" id="hide_detail" class="button-next-ghost">
+    </div>
+    <br>
+    <div id ="details">
+        {% for choice in choices %}
+            Choix {{ forloop.counter }} : {{choice.voters_names}}<br><br>
+        {% endfor %}
+    </div>
+    <br>
+    <p>
+        Lien à envoyer aux votants : <br><br><span id="tocopy">127.0.0.1:8000/vote/{{ id_vote }}</span>
+        <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
+     </p>
+     <script type="text/javascript" src="{% static 'js/hide_show_voters.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/copy_button.js' %}"></script>
+
+{% endblock %}
+
