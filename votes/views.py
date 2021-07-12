@@ -19,7 +19,7 @@ def create_vote(request):
     def manage_choice(request, id_vote, desc, num_id_choice):
         choice_form = ChoiceForm(request.POST)
         nb = 0
-        if choice_form.is_valid() and desc is not "":
+        if choice_form.is_valid() and desc != "":
             nb += 1
             choice_modif = choice_form.save(False)
             choice_modif.description = desc
