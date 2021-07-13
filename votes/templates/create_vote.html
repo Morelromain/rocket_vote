@@ -23,117 +23,39 @@
             </div>
         </div>
 
-
         <div class="form_choice">
                 <div id="choicefield2">
                     <label class="title">Choix 2 :</label>
                     {{ choice_form.description }} <br><br>
                 </div> 
             <div class="block_button">
-                <button id="toggle2b" type="button" class="buttonazza">-</button>
-
+                <button id="toggle2b" type="button" class="button">-</button>
             </div>
-
             <div class="block_button">
-                <button id="toggle3" type="button" class="button-ghost">+</button>
+                <button id="toggle3" type="button" class="button">+</button>
             </div>
         </div>
         
-        <div class="form_choice">
-            <div id="choicefield3" class="ghost">
-                <label class="title" >Choix 3 :</label>
-                {{ choice_form.description }} <br><br>
+        {% for i in '3456789'|make_list %}
+            <div class="form_choice">
+                <div id="choicefield{{ forloop.counter|add:"+2" }}" class="ghost">
+                    <label class="title" >Choix {{ forloop.counter|add:"+2" }} :</label>
+                    {{ choice_form.description }} <br><br>
+                </div>
+                <div class="block_button">
+                    <button id="toggle{{ forloop.counter|add:"+2" }}b" 
+                    type="button" class="button-ghost">-</button>
+                </div>
+                <div class="block_button">
+                    <button id="toggle{{ forloop.counter|add:"+3" }}" 
+                    type="button" class="button-ghost">+</button>
+                </div>
             </div>
-            <div class="block_button">
-                <button id="toggle3b" type="button" class="button-ghost">-</button>
-            </div>
-            <div class="block_button">
-                <button id="toggle4" type="button" class="button-ghost">+</button>
-            </div>
-        </div>
-
-        <div class="form_choice">
-            <div id="choicefield4" class="ghost">
-                <label class="title" >Choix 4 :</label>
-                {{ choice_form.description }} <br><br>
-            </div>
-            <div class="block_button">
-                <button id="toggle4b" type="button" class="button-ghost">-</button>
-            </div>
-            <div class="block_button">
-                <button id="toggle5" type="button" class="button-ghost">+</button>
-            </div>
-        </div>
-
-        <div class="form_choice">
-            <div id="choicefield5" class="ghost">
-                <label class="title" >Choix 5 :</label>
-                {{ choice_form.description }} <br><br>
-            </div>
-            <div class="block_button">
-                <button id="toggle5b" type="button" class="button-ghost">-</button>
-            </div>
-            <div class="block_button">
-                <button id="toggle6" type="button" class="button-ghost">+</button>
-            </div>
-        </div>
-
-        <div class="form_choice">
-            <div id="choicefield6" class="ghost">
-                <label class="title" >Choix 6 :</label>
-                {{ choice_form.description }} <br><br>
-            </div>
-            <div class="block_button">
-                <button id="toggle6b" type="button" class="button-ghost">-</button>
-            </div>
-            <div class="block_button">
-                <button id="toggle7" type="button" class="button-ghost">+</button>
-            </div>
-        </div>
-
-        <div class="form_choice">
-            <div id="choicefield7" class="ghost">
-                <label class="title" >Choix 7 :</label>
-                {{ choice_form.description }} <br><br>
-            </div>
-            <div class="block_button">
-                <button id="toggle7b" type="button" class="button-ghost">-</button>
-            </div>
-            <div class="block_button">
-                <button id="toggle8" type="button" class="button-ghost">+</button>
-            </div>
-        </div>
-
-        <div class="form_choice">
-            <div id="choicefield8" class="ghost">
-                <label class="title" >Choix 8 :</label>
-                {{ choice_form.description }} <br><br>
-            </div>
-            <div class="block_button">
-                <button id="toggle8b" type="button" class="button-ghost">-</button>
-            </div>
-            <div class="block_button">
-                <button id="toggle9" type="button" class="button-ghost">+</button>
-            </div>
-        </div>
-
-        <div class="form_choice">
-            <div id="choicefield9" class="ghost">
-                <label class="title" >Choix 9 :</label>
-                {{ choice_form.description }} <br><br>
-            </div>
-            <div class="block_button">
-                <button id="toggle9b" type="button" class="button-ghost">-</button>
-            </div>
-        </div>
-
+        {% endfor %}
 
         <br><input type="submit" class="button-next" value="Créer le vote"><br><br>
         </form>
     </div>
 
-    
 <script type="text/javascript" src="{% static 'js/hide_show_choices.js' %}"></script>
-
-
 {% endblock %}
