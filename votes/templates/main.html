@@ -3,6 +3,7 @@
     <title>Rocket Vote</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
 </head>
 
@@ -13,9 +14,10 @@
         <img class="fit-picture" src="{% static 'img/logo.png' %}"
         alt="Logo rocket vote"></a>
     </div>
-    <div id="bloc_page">
+    <div id="bloc_page" class="p-3 mb-2 bg-gradient-light text-dark">
     {% block content %}
     {% endblock %}
     </div> 
+    <script type="text/javascript" src="{% static 'js/select_choices.js' %}"></script>
 </body>
 </html>

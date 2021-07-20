@@ -21,7 +21,7 @@
         {% endfor %}
         <br>
     </div>
-    <div id = center-block>
+    <div id="center-block">
         <input type="button" value="Afficher votants" id="show_detail" class="button-next">
         <input type="button" value="Cacher votants" id="hide_detail" class="button-next-ghost">
     </div>
@@ -36,7 +36,7 @@
         Lien à envoyer aux votants : <br><br><span id="tocopy">https://rocket-vote.herokuapp.com/vote/{{ id_vote }}</span>
         <input type="button" value="Copier" class="js-copy" data-target="#tocopy">
      </p>
-     <script type="text/javascript" src="{% static 'js/hide_show_voters.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/hide_show_voters.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/copy_button.js' %}"></script>
 
 {% endblock %}

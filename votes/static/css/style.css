@@ -1,5 +1,5 @@
 body {
-    background: rgb(8, 8, 7);
+    background: rgb(21, 20, 22);
 }
 
 #bloc_page {
@@ -20,8 +20,7 @@ body {
 }
 
 .form_choice {
-    width: 220px;
-    margin: auto;
+    height: 0px;
 }
 
 .block_button {
@@ -58,50 +57,36 @@ progress[value]::-webkit-progress-bar {
 #percent {
     position: absolute;   
     padding-left: 65px;
-
     color: rgb(241, 241, 241);
    }
-   
-.button {
+
+
+/* button */
+
+.button, .button-ghost {
     width: 30px;
     height: 30px;
     border-radius: 25px;
-    background-color: rgb(157, 117, 245);
+    background: rgb(157, 117, 245);
     border: none;
     float:right;
 }
 
-.button:hover {
+.button:hover, .button-ghost:hover {
     cursor: pointer;
     background-color: #F89900;
     float:right;
 }
 
-.button-ghost {
-    width: 30px;
-    height: 30px;
-    border-radius: 25px;
-    background-color: rgb(157, 117, 245);
-    border: none;
+.button-ghost, .button-ghost:hover {
     display: none;
-    float:right;
 }
 
 .buttonazza {
     visibility: hidden;
 }
 
-
-
-
-.button-ghost:hover {
-    cursor: pointer;
-    background-color: #F89900;
-    display: none;
-    float:right;
-}
-
-.button-next {
+.button-next, .button-next-ghost {
     width: 100px;
     height: 30px;
     border-radius: 5px;
@@ -110,26 +95,15 @@ progress[value]::-webkit-progress-bar {
     cursor: pointer;
 }
 
-.button-next:hover {
+.button-next:hover, .button-next-ghost:hover {
     cursor: pointer;
     background-color: #F89900;
 }
 
-.button-next-ghost {
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: rgb(157, 117, 245);
-    border: none;
-    cursor: pointer;
+.button-next-ghost, .button-next-ghost:hover {
     display: none;
 }
 
-.button-next-ghost:hover {
-    cursor: pointer;
-    background-color: #F89900;
-    display: none;
-}
 
 .js-copy {
     width: 50px;
@@ -150,24 +124,27 @@ p span {
     background: rgb(92, 91, 91);
 }
 
-.form_votea{
-    border: 2px solid rgb(157, 117, 245);
-    padding: 0.5rem;
-    background: rgb(92, 91, 91);
-    width: 300px;
+.form_votea, .form_voteb, .form_votec {
+    border: 3px solid rgb(157, 117, 245);
+    padding: 0.2rem;
+    background: rgb(176, 174, 182);
 }
 
-.form_voteb{
-    border: 2px solid rgb(157, 117, 245);
-    padding: 0.2rem;
-    background: rgb(126, 126, 126);
+input:focus{
+    outline: 1px solid #F89900;
+    border: 2px solid #F89900;
 }
 
-.form_votec{
-    border: 2px solid rgb(157, 117, 245);
-    padding: 0.2rem;
-    background: rgb(126, 126, 126);
-    width : 95px;
+.form_votea {
+    width: 180px;
+}
+
+.form_voteb {
+    width: 180px;
+}
+
+.form_votec {
+    width : 100px;
 }
 
 #result{
@@ -195,12 +172,22 @@ p span {
 .rad-label:focus-within {
     background: rgba(158, 117, 245, 0.363);
 }
-  
+
+.rad-label:focus {
+    background: rgba(158, 117, 245, 0.363);
+}
+
+
 .rad-input {
     width: 18px;
     height: 18px;
-    border: 2px solid white;
+
 }
+
+.rad-input:focus {
+    outline-color: transparent;
+  } 
+
 
 .rad-input:checked:after {
     width: 18px;
@@ -217,7 +204,40 @@ p span {
 }
 
 #center-block{
-
     margin: auto;
-    width: 100px;
+    width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .button, .button-ghost, .button:hover, .button-ghost:hover,
+    .button-ghost, .button-ghost:hover, .buttonazza {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: 220%;       
+    }
+ 
+    .button-next, .button-next-ghost, .button-next:hover, 
+    .button-next-ghost:hover, .button-next-ghost, .button-next-ghost:hover{
+        width: 200px;
+        height: 45px;
+        border-radius: 25px;
+        font-size: 150%;       
+    }
+    #center-block{
+        margin: auto;
+        width: 50%;
+    }
+
+    p span {
+        display: none;
+    }
+
+    .js-copy {
+        width: 200px;
+        height: 45px;
+        border-radius: 25px;
+        font-size: 150%; 
+    }
 }

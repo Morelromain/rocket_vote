@@ -9,39 +9,44 @@
         <form method="POST" enctype="multipart/form-data" action="{% url 'create_vote'%}">
         {% csrf_token %}
 
-        <label class="title">Titre :</label><br><br>
-        {{ vote_form.title }}<br><br><br>
+        <label class="title"> &nbsp;&nbsp; TITRE :</label>
+        {{ vote_form.title }}<br><br>
 
-        <div class="form_choice">
-                <label class="title">Choix 1 :</label>
-                {{ choice_form.description }}<br><br>
-            <div class="block_button">
-                <button id="toggle2" type="button" class="button-ghost">+</button>
-            </div>
-            <div class="block_button">
-                <button id="toggle10" type="button" class="button-ghost">+</button>
-            </div>
-        </div>
 
-        <div class="form_choice">
-                <div id="choicefield2">
-                    <label class="title">Choix 2 :</label>
-                    {{ choice_form.description }} <br><br>
-                </div> 
-            <div class="block_button">
-                <button id="toggle2b" type="button" class="button">-</button>
+            <label class="title">Choix 1 :</label>
+            {{ choice_form.description }}<br><br>
+            <div class="form_choice">
+                <div class="block_button">
+                    <button id="toggle2" type="button" class="button-ghost">+</button>
+                </div>
+                <div class="block_button">
+                    <button id="toggle10" type="button" class="button-ghost">+</button>
+                </div>
             </div>
-            <div class="block_button">
-                <button id="toggle3" type="button" class="button">+</button>
-            </div>
-        </div>
+
+
+        
+            <div id="choicefield2">
+                <label class="title">Choix 2 :</label>
+                {{ choice_form.description }} <br><br>
+            </div> 
+            <div class="form_choice">
+                <div class="block_button">
+                    <button id="toggle2b" type="button" class="button">-</button>
+                </div>
+                <div class="block_button">
+                    <button id="toggle3" type="button" class="button">+</button>
+                </div>
+            </div>  
+
         
         {% for i in '3456789'|make_list %}
+
+            <div id="choicefield{{ forloop.counter|add:"+2" }}" class="ghost">
+                <label class="title" >Choix {{ forloop.counter|add:"+2" }} :</label>
+                {{ choice_form.description }} <br><br>
+            </div>
             <div class="form_choice">
-                <div id="choicefield{{ forloop.counter|add:"+2" }}" class="ghost">
-                    <label class="title" >Choix {{ forloop.counter|add:"+2" }} :</label>
-                    {{ choice_form.description }} <br><br>
-                </div>
                 <div class="block_button">
                     <button id="toggle{{ forloop.counter|add:"+2" }}b" 
                     type="button" class="button-ghost">-</button>
@@ -51,9 +56,10 @@
                     type="button" class="button-ghost">+</button>
                 </div>
             </div>
-        {% endfor %}
 
-        <br><input type="submit" class="button-next" value="Créer le vote"><br><br>
+        {% endfor %}
+        <br><br><br>
+        <input type="submit" class="button-next" value="Créer le vote"><br><br>
         </form>
     </div>
 
