@@ -11,13 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = "django-insecure-svztsibibnv^wasz4-2ept%ios#es#sj1vks-qmshtil6)%i_%" # Local
+SECRET_KEY = "django-insecure-svztsibibnv^wasz4-2ept%ios#es#sj1vks-qmshtil6)%i_%" # Local
 #SECRET_KEY = os.environ['DJANGO_SECRET_KEY'] # Prod
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = False # Prod
-DEBUG = True # Local
+DEBUG = False # Prod
+#DEBUG = True # Local
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', "localhost"]
 
@@ -101,6 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -123,6 +124,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "files"),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
