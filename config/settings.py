@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-svztsibibnv^wasz4-2ept%ios#es#sj1vks-qmshtil6)%i_%" # Local
 #SECRET_KEY = os.environ['DJANGO_SECRET_KEY'] # Prod
 
-
+#DEBUG_PROPAGATE_EXCEPTIONS = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False # Prod
 #DEBUG = True # Local
@@ -124,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -132,5 +132,5 @@ STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
-DEBUG_PROPAGATE_EXCEPTIONS = True
+
 django_heroku.settings(locals())
