@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = "django-insecure-svztsibibnv^wasz4-2ept%ios#es#sj1vks-qmshtil6)%i_%" # Local
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY'] if os.environ.get["ENV", "development"] == "production" else "django-insecure-svztsibibnv^wasz4-2ept%ios#es#sj1vks-qmshtil6)%i_%"
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 #DEBUG_PROPAGATE_EXCEPTIONS = True
 # SECURITY WARNING: don't run with debug turned on in production!
