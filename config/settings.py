@@ -132,5 +132,5 @@ STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
-
+DEBUG_PROPAGATE_EXCEPTIONS = True
 django_heroku.settings(locals())
